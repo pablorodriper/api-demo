@@ -14,8 +14,16 @@ async def get_music():
     redirect_url = "https://music.apple.com/es/album/in-dream/1016488205"
     return redirect_url
 
+discs_list = [
+    "https://embed.music.apple.com/es/album/s%C3%BAbete-la-radio/1722256361",
+    "https://embed.music.apple.com/es/album/in-dream/1016488205",
+]
+
 @app.get("/music_iframe")
 def get_music_iframe():
+    import random
+    disc_url = random.choice(discs_list)
+
     html_content = """
     <html lang="en">
     <head>
@@ -54,7 +62,7 @@ def get_music_iframe():
           class="responsive-iframe"
           allow="autoplay *; encrypted-media *;"
           sandbox="allow-scripts allow-same-origin allow-popups"
-          src="https://embed.music.apple.com/es/album/in-dream/1016488205">
+          src="{disc_url}">
         </iframe>
       </div>
     </body>
