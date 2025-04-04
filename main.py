@@ -9,10 +9,10 @@ app = FastAPI()
 def read_root():
     return {"message": "Welcome to my Render-hosted API!"}
 
-@app.get("/music/")
-def get_music_page():
+@app.get("/music/", response_class=RedirectResponse, status_code=302)
+async def get_music_page():
     redirect_url = "https://music.apple.com/es/album/in-dream/1016488205"
-    return RedirectResponse(redirect_url)
+    return redirect_url
     
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: str = None):
