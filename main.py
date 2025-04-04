@@ -68,6 +68,7 @@ def get_music_iframe():
     </body>
     </html>
     """
+    return HTMLResponse(content=html_content)
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: str = None):
