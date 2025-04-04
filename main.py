@@ -1,7 +1,9 @@
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
+
 
 app = FastAPI()
+
 
 @app.get("/")
 def read_root():
