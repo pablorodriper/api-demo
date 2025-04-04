@@ -22,8 +22,7 @@ def get_music_iframe():
         <title>Random Music</title>
       </head>
       <body>
-        <b>Hola</b>
-        <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/es/album/in-dream/1016488205"></iframe>
+        <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="1000" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/es/album/in-dream/1016488205"></iframe>
       </body>
     </html>
     """
