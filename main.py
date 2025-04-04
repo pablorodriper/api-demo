@@ -11,7 +11,7 @@ def read_root():
 
 @app.get("/music/")
 def get_music_page():
-    redirect_url = "music.apple.com/es/album/in-dream/1016488205"
+    redirect_url = "https://music.apple.com/es/album/in-dream/1016488205"
     return RedirectResponse(redirect_url)
     
 @app.get("/items/{item_id}")
