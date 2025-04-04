@@ -17,13 +17,46 @@ async def get_music():
 @app.get("/music_iframe")
 def get_music_iframe():
     html_content = """
-    <html>
-      <head>
-        <title>Random Music</title>
-      </head>
-      <body>
-        <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="1000" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/es/album/in-dream/1016488205"></iframe>
-      </body>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Music Player</title>
+      <style>
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+        }
+        .container {
+          text-align: center;
+          padding: 20px;
+        }
+        .responsive-iframe {
+          width: 100%;
+          max-width: 660px;
+          height: 150px;
+          overflow: hidden;
+          background: transparent;
+          border: none;
+        }
+        @media (max-width: 480px) {
+          .responsive-iframe {
+            height: 110px;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Random Music</h1>
+        <iframe
+          class="responsive-iframe"
+          allow="autoplay *; encrypted-media *;"
+          sandbox="allow-scripts allow-same-origin allow-popups"
+          src="https://embed.music.apple.com/es/album/in-dream/1016488205">
+        </iframe>
+      </div>
+    </body>
     </html>
     """
     return HTMLResponse(content=html_content)
