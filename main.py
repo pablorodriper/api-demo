@@ -24,34 +24,34 @@ def get_music_iframe():
     import random
     disc_url = random.choice(discs_list)
 
-    html_content = """
+    html_content = f"""
     <html lang="en">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Tu disco para hoy</title>
       <style>
-        body {
+        body {{
           margin: 0;
-	  font-family: Arial, sans-serif;
-        }
-        .container {
+          font-family: Arial, sans-serif;
+        }}
+        .container {{
           text-align: center;
           padding: 20px;
-        }
-        .responsive-iframe {
+        }}
+        .responsive-iframe {{
           width: 100%;
           max-width: 660px;
           height: 1000px;
           overflow: hidden;
           background: transparent;
           border: none;
-        }
-        @media (max-width: 480px) {
-          .responsive-iframe {
+        }}
+        @media (max-width: 480px) {{
+          .responsive-iframe {{
             height: 110px;
-          }
-        }
+          }}
+        }}
       </style>
     </head>
     <body>
@@ -68,7 +68,6 @@ def get_music_iframe():
     </body>
     </html>
     """
-    return HTMLResponse(content=html_content)
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: str = None):
