@@ -14,7 +14,7 @@ async def get_music():
     redirect_url = "https://music.apple.com/es/album/in-dream/1016488205"
     return redirect_url
 
-@app.get("/music_iframe", response_class=HTMLResponse)
+@app.get("/music_iframe")
 def get_music_iframe():
     html_content = """
     <html>
