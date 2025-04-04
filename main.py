@@ -21,20 +21,27 @@ def get_music_iframe():
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Music Player</title>
+      <title>Tu disco para hoy</title>
       <style>
-        body {
+        html, body {
           margin: 0;
-          font-family: Arial, sans-serif;
+          padding: 0;
+          height: 100%;
         }
         .container {
+          display: flex;
           text-align: center;
           padding: 20px;
+        }
+        .title {
+          text-align: center;
+          padding: 20px;
+          background-color: #f0f0f0;
         }
         .responsive-iframe {
           width: 100%;
           max-width: 660px;
-          height: 150px;
+          height: 100%;
           overflow: hidden;
           background: transparent;
           border: none;
@@ -48,7 +55,9 @@ def get_music_iframe():
     </head>
     <body>
       <div class="container">
-        <h1>Random Music</h1>
+        <div class="title">
+          <h1>Reproductor de Música</h1>
+        </div>
         <iframe
           class="responsive-iframe"
           allow="autoplay *; encrypted-media *;"
